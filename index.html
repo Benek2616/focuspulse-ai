@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusPulse AI – Głęboka praca</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">◉ FocusPulse</div>
+      <p>Timer głębokiej pracy z historią i insightami</p>
+    </header>
+
+    <!-- Timer -->
+    <section class="card timer-card">
+      <div class="mode-tabs">
+        <button class="mode active" data-mode="focus">Focus</button>
+        <button class="mode" data-mode="short">Krótka przerwa</button>
+        <button class="mode" data-mode="long">Długa przerwa</button>
+      </div>
+
+      <div class="time-display" id="time">25:00</div>
+
+      <div class="controls">
+        <button id="start-btn" class="primary">Start</button>
+        <button id="reset-btn" class="secondary">Reset</button>
+      </div>
+
+      <div class="session-info">
+        Sesja <span id="session-count">1</span> • Dziś: <span id="today-minutes">0</span> min
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="card">
+      <h3>Dzisiejszy postęp</h3>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-value" id="stat-sessions">0</div>
+          <div class="stat-label">sesje</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-minutes">0</div>
+          <div class="stat-label">minut</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-goal">0%</div>
+          <div class="stat-label">celu</div>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="goal-text">Cel dzienny: <span id="daily-goal">120</span> minut</div>
+    </section>
+
+    <!-- Insight -->
+    <section class="card insight-card">
+      <h3>💡 Insight</h3>
+      <p id="insight-text">Zacznij pierwszą sesję, a dam Ci konkretną wskazówkę.</p>
+    </section>
+
+    <!-- Settings -->
+    <section class="card">
+      <h3>Ustawienia</h3>
+      <div class="setting">
+        <label>Czas focus (min)</label>
+        <input type="number" id="focus-time" value="25" min="1" max="90">
+      </div>
+      <div class="setting">
+        <label>Krótka przerwa (min)</label>
+        <input type="number" id="short-time" value="5" min="1" max="30">
+      </div>
+      <div class="setting">
+        <label>Długa przerwa (min)</label>
+        <input type="number" id="long-time" value="15" min="1" max="60">
+      </div>
+      <div class="setting">
+        <label>Cel dzienny (min)</label>
+        <input type="number" id="goal-input" value="120" min="15" max="600">
+      </div>
+      <button id="save-settings" class="secondary full">Zapisz ustawienia</button>
+    </section>
+
+    <footer>Działa lokalnie • Dane zostają tylko u Ciebie</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
